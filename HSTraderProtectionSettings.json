@@ -1,0 +1,20 @@
+{
+  "PrepDays": 7,
+  "ObjectiveHours": 24,
+  "WaveIntervalHours": 1,
+  "MaxAlive": 24,
+  "SpawnMinRadius": 20,
+  "SpawnMaxRadius": 50,
+  "MissionRadius": 64,
+  "PulseStartPercent": 75,
+  "SuppressTeleport": true,
+  "SpawnsPerTick": 2,
+  "Bands": [
+    { "FromHour": 0, "ToHour": 4, "Count": 6, "DemolisherChance": 0, "Groups": ["HS_TP_Normal"] },
+    { "FromHour": 4, "ToHour": 8, "Count": 8, "DemolisherChance": 0, "Groups": ["HS_TP_Normal", "HS_TP_Feral"] },
+    { "FromHour": 8, "ToHour": 12, "Count": 10, "DemolisherChance": 0, "Groups": ["HS_TP_Feral", "HS_TP_Radiated"] },
+    { "FromHour": 12, "ToHour": 16, "Count": 12, "DemolisherChance": 0.02, "Groups": ["HS_TP_Radiated", "HS_TP_Charged"] },
+    { "FromHour": 16, "ToHour": 20, "Count": 14, "DemolisherChance": 0.08, "Groups": ["HS_TP_Charged", "HS_TP_Infernal"] },
+    { "FromHour": 20, "ToHour": 24, "Count": 16, "DemolisherChance": 0.15, "Groups": ["HS_TP_Charged", "HS_TP_Infernal", "HS_TP_Demolisher"] }
+  ]
+}

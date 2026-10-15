@@ -1,0 +1,6 @@
+build33/
+*.user
+.vs/
+bin/
+obj/
+*.zip

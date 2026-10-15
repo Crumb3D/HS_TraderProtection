@@ -1,0 +1,10 @@
+<configs>
+	<append xpath="/xui">
+		<window_group name="hsTraderResults" controller="HSTraderResults, HS_TraderProtection">
+			<window name="windowHSTraderResults"/>
+		</window_group>
+	</append>
+	<append xpath="/xui/window_group[@name='toolbelt']">
+		<window name="HUDHSTrader"/>
+	</append>
+</configs>

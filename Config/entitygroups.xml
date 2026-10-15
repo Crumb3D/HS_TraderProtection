@@ -1,0 +1,66 @@
+<configs>
+	<append xpath="/entitygroups">
+		<entitygroup name="HS_TP_Normal">
+			<e n="zombieBoe" />
+			<e n="zombieJoe" />
+			<e n="zombieSteve" />
+			<e n="zombieArlene" />
+			<e n="zombieMarlene" />
+			<e n="zombieNurse" />
+			<e n="zombieBusinessMan" />
+			<e n="zombieFatCop" />
+			<e n="zombieSoldier" />
+			<e n="zombieDarlene" />
+			<e n="zombieYo" />
+		</entitygroup>
+		<entitygroup name="HS_TP_Feral">
+			<e n="zombieBoeFeral" />
+			<e n="zombieJoeFeral" />
+			<e n="zombieSteveFeral" />
+			<e n="zombieArleneFeral" />
+			<e n="zombieMarleneFeral" />
+			<e n="zombieNurseFeral" />
+			<e n="zombieBusinessManFeral" />
+			<e n="zombieFatCopFeral" />
+			<e n="zombieSoldierFeral" />
+			<e n="zombieDarleneFeral" />
+		</entitygroup>
+		<entitygroup name="HS_TP_Radiated">
+			<e n="zombieBoeRadiated" />
+			<e n="zombieJoeRadiated" />
+			<e n="zombieSteveRadiated" />
+			<e n="zombieArleneRadiated" />
+			<e n="zombieNurseRadiated" />
+			<e n="zombieBusinessManRadiated" />
+			<e n="zombieFatCopRadiated" />
+			<e n="zombieSoldierRadiated" />
+			<e n="zombieWightRadiated" />
+		</entitygroup>
+		<entitygroup name="HS_TP_Charged">
+			<e n="zombieArleneCharged" />
+			<e n="zombieJoeCharged" />
+			<e n="zombieSteveCharged" />
+			<e n="zombieNurseCharged" />
+			<e n="zombieBusinessManCharged" />
+			<e n="zombieFatCopCharged" />
+			<e n="zombieSoldierCharged" />
+			<e n="zombieWightCharged" />
+			<e n="zombieDarleneCharged" />
+		</entitygroup>
+		<entitygroup name="HS_TP_Infernal">
+			<e n="zombieBusinessManInfernal" />
+			<e n="zombieBurntInfernal" />
+			<e n="zombieBoeInfernal" />
+			<e n="zombieFatCopInfernal" />
+			<e n="zombieSoldierInfernal" />
+			<e n="zombieWightInfernal" />
+			<e n="zombieMutatedInfernal" />
+			<e n="zombieLumberjackInfernal" />
+			<e n="zombieBikerInfernal" />
+			<e n="zombieInmateInfernal" />
+		</entitygroup>
+		<entitygroup name="HS_TP_Demolisher">
+			<e n="zombieDemolition" />
+		</entitygroup>
+	</append>
+</configs>

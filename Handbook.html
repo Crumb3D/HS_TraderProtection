@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>HS Trader Protection — Player Guide</title>
+  <style>
+    :root {
+      --ink: #1c1a16;
+      --paper: #efe6d4;
+      --card: #f7f1e4;
+      --rule: #3d3a32;
+      --accent: #b8860b;
+      --caution: #c4a035;
+      --muted: #5c5648;
+      --steel: #2a3238;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Calibri", "Georgia", serif;
+      color: var(--ink);
+      background: var(--steel);
+      line-height: 1.45;
+    }
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--paper);
+      min-height: 100vh;
+      border-left: 8px solid var(--caution);
+    }
+    header.mast {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 1.6rem 2rem 1.3rem;
+    }
+    header.mast p.kicker {
+      margin: 0 0 0.35rem;
+      letter-spacing: 0.28em;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      color: var(--caution);
+      font-family: Consolas, "Courier New", monospace;
+    }
+    header.mast h1 {
+      margin: 0 0 0.4rem;
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    header.mast .sub { margin: 0; color: #cfc6b4; font-size: 0.95rem; }
+    .toolbar {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      padding: 0.85rem 2rem;
+      background: #e4d9c2;
+      border-bottom: 1px solid #cfc3a8;
+    }
+    .toolbar button {
+      appearance: none;
+      border: 1px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.45rem 0.9rem;
+      font: 600 0.85rem/1 "Segoe UI", sans-serif;
+      cursor: pointer;
+    }
+    .toolbar button.ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+    .toolbar button:hover { filter: brightness(1.12); }
+    nav.toc { padding: 1rem 2rem 0; font-size: 0.92rem; }
+    nav.toc ol { margin: 0.3rem 0 0; padding-left: 1.2rem; }
+    nav.toc a { color: var(--ink); }
+    main { padding: 0.5rem 2rem 3rem; }
+    h2 {
+      margin: 1.8rem 0 0.6rem;
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.25rem;
+    }
+    h3 { margin: 1.1rem 0 0.4rem; font-size: 1.02rem; }
+    p, li { font-size: 0.98rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0.6rem 0 1rem;
+      background: var(--card);
+    }
+    th, td {
+      border: 1px solid #c5b89a;
+      padding: 0.4rem 0.55rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #ddd2b8; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: var(--card);
+      padding: 0.65rem 0.85rem;
+      margin: 0.8rem 0;
+    }
+    footer.col {
+      padding: 1rem 2rem 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    @media print {
+      body { background: #fff; }
+      .wrap { border: none; max-width: none; }
+      .toolbar, nav.toc { display: none !important; }
+      header.mast { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { color: inherit; text-decoration: none; }
+      @page { margin: 14mm 14mm 16mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="mast">
+      <p class="kicker">7 Days to Die · HS Trader Protection</p>
+      <h1>Defend the trader</h1>
+      <p class="sub">An admin starts a mission at a trader compound. You get in-game days to build, then the raid hits. Keep the trader alive for 24 in-game hours.</p>
+    </header>
+    <div class="toolbar">
+      <button type="button" id="printBtn">Print / save as PDF</button>
+    </div>
+    <nav class="toc">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#start">How a mission starts</a></li>
+        <li><a href="#prep">Preparation</a></li>
+        <li><a href="#raid">The raid</a></li>
+        <li><a href="#end">Winning and losing</a></li>
+        <li><a href="#results">Results screen</a></li>
+        <li><a href="#cant">What you cannot do</a></li>
+        <li><a href="#tips">Quick tips</a></li>
+      </ol>
+    </nav>
+    <main>
+      <h2 id="start">How a mission starts</h2>
+      <p>Someone with admin rights stands <strong>inside a trader compound</strong> and types <code>hs_tp start</code> in the F1 console.</p>
+      <p>You do not start this yourself. You wait for the HUD on the left of the toolbelt.</p>
+      <div class="callout">
+        The shop NPC stays. The vanilla trader protect volume still stops you wrecking the shop. Build <strong>outside</strong> that volume.
+      </div>
+
+      <h2 id="prep">Preparation</h2>
+      <p>Default: <strong>7 in-game days</strong>.</p>
+      <ul>
+        <li>The left HUD says <strong>PROTECTED</strong> and counts down <strong>RAID IN N DAYS hh:mm</strong>.</li>
+        <li>The trader cannot take damage.</li>
+        <li>Trading is closed. Looking at the trader says they are busy with the protection mission.</li>
+        <li>You are not kicked out of the compound (teleport-out is off while the mission runs).</li>
+      </ul>
+      <p>Use the time. Walls, turrets, traps, ammo, meds. Put defences <strong>around</strong> the compound, not through the shop prefab — the shop reloads at the end and player walls <strong>inside</strong> the vanilla prefab do not survive that.</p>
+      <p><code>hs_tp status</code> on the server also prints the same countdown.</p>
+
+      <h2 id="raid">The raid</h2>
+      <p>When the timer hits zero the HUD flips to <strong>UNDER ATTACK</strong>.</p>
+      <ul>
+        <li>The trader can take <strong>zombie damage only</strong>. Players, turrets, and traps do not hurt the trader.</li>
+        <li>Zombies spawn in a ring around the trader (default 20–50 blocks) and will melee the trader, not only the players.</li>
+        <li>Waves step up about once per in-game hour, for 24 hours.</li>
+      </ul>
+      <table>
+        <tr><th>Raid hours</th><th>Mix</th></tr>
+        <tr><td>0–4</td><td>Normal</td></tr>
+        <tr><td>4–8</td><td>Normal + feral</td></tr>
+        <tr><td>8–12</td><td>Feral + radiated</td></tr>
+        <tr><td>12–16</td><td>Radiated + charged (rare demolisher)</td></tr>
+        <tr><td>16–20</td><td>Charged + infernal</td></tr>
+        <tr><td>20–24</td><td>Charged + infernal + demolisher</td></tr>
+      </table>
+      <p>The HUD shows the wave, time until the next wave, <strong>TRADER SURVIVED FOR hh:mm</strong>, and a health bar. After <strong>75%</strong> of the 24-hour objective the panel starts to pulse. It gets stronger the closer you are to the end.</p>
+      <p>Cap: 24 mission zombies alive at once (JSON <code>MaxAlive</code>). Extra spawns wait until something dies.</p>
+
+      <h2 id="end">Winning and losing</h2>
+      <p><strong>Success:</strong> the trader is still up after 24 in-game hours.</p>
+      <p><strong>Failure:</strong> a zombie lands a lethal hit, or the trader vanishes.</p>
+      <p>Either way:</p>
+      <ol>
+        <li>Mission zombies are cleared.</li>
+        <li>The trader compound prefab reloads (vanilla shop blocks come back).</li>
+        <li>The trader is restored (full health, god mode back to normal).</li>
+        <li>The <strong>results screen</strong> opens for everyone.</li>
+      </ol>
+      <p>Close the results screen. The mod sits idle until an admin starts another mission.</p>
+      <p><code>hs_tp stop</code> during prep or raid reloads the compound and goes idle <strong>without</strong> a results screen.</p>
+
+      <h2 id="results">Results screen</h2>
+      <p>Lead block: survival time, ending health, damage taken, waves survived, whether the 24-hour objective was met, cause of death, final attacker.</p>
+      <p>Team totals, then per-player lines. Kill buckets are <strong>exclusive</strong> — a demolisher is only a demolisher, not also infernal / charged / radiated / feral.</p>
+      <table>
+        <tr><th>Stat</th><th>Meaning</th></tr>
+        <tr><td>Total / player / turret / trap kills</td><td>Who got the last hit</td></tr>
+        <tr><td>Normal, feral, radiated, charged, infernal, demolisher</td><td>Exclusive type buckets</td></tr>
+        <tr><td>Headshots</td><td>Head hits that counted</td></tr>
+        <tr><td>Ammo fired / hits</td><td>Shots while the mission is running</td></tr>
+        <tr><td>Player deaths</td><td>Deaths inside the mission radius</td></tr>
+        <tr><td>Defence blocks</td><td>Placed / upgraded / destroyed around the compound</td></tr>
+      </table>
+      <p>There is no per-zombie kill feed. One kill, one bucket.</p>
+
+      <h2 id="cant">What you cannot do</h2>
+      <ul>
+        <li>Trade until the mission is idle again.</li>
+        <li>Hurt the trader yourself (or with your turrets).</li>
+        <li>Keep player-built walls <strong>inside</strong> the vanilla shop prefab after the reload.</li>
+        <li>Start a second mission while one is running, or while the results screen is still up.</li>
+      </ul>
+
+      <h2 id="tips">Quick tips</h2>
+      <ul>
+        <li>Nail the outer ring first. Demolishers show up late.</li>
+        <li>Turrets and traps count on the results screen. Use them.</li>
+        <li>The left HUD stays up for the whole mission. If you do not see it, this folder is missing from <strong>your</strong> Mods as well as the server.</li>
+        <li>After an update, restart the <strong>matching dedicated server and the matching client</strong>.</li>
+      </ul>
+    </main>
+    <footer class="col">
+      HS Trader Protection · 7 Days To Die 3.2 and 3.3 · Handbook.html (print) · PLAYER_HANDBOOK.md (markdown)
+    </footer>
+  </div>
+  <script>
+    document.getElementById("printBtn").addEventListener("click", function () { window.print(); });
+  </script>
+</body>
+</html>

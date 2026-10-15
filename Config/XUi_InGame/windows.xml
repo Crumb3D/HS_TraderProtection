@@ -1,0 +1,34 @@
+<configs>
+	<append xpath="/windows">
+		<window name="HUDHSTrader" pos="20,-160" width="340" height="210" anchor="Left" depth="15" controller="HSTraderHud, HS_TraderProtection">
+			<rect width="340" height="210" visible="{show}">
+				<sprite depth="1" pos="0,0" width="340" height="210" sprite="menu_empty" color="0,0,0,170" type="sliced"/>
+				<label depth="2" pos="12,-8" width="316" height="28" font_size="22" justify="center" color="255,210,80,255" text="{title}"/>
+				<label depth="2" pos="12,-40" width="316" height="28" font_size="20" justify="center" color="80,220,80,255" text="{status}"/>
+				<label depth="2" pos="12,-72" width="316" height="32" font_size="20" justify="center" color="255,255,255,235" text="{timer}"/>
+				<label depth="2" pos="12,-108" width="316" height="24" font_size="18" justify="center" color="255,255,255,220" text="{healthlabel}" visible="{showhealth}"/>
+				<rect pos="20,-140" width="300" height="22" visible="{showhealth}">
+					<sprite depth="2" pos="0,0" width="300" height="18" sprite="menu_empty" color="40,40,40,220" type="sliced"/>
+					<sprite depth="3" pos="0,0" width="300" height="18" sprite="menu_empty" color="180,40,40,230" type="filled" fillspritepad="true" fill="{healthfill}"/>
+				</rect>
+			</rect>
+		</window>
+
+		<window name="windowHSTraderResults" width="720" height="620" panel="Center" cursor_area="true">
+			<rect name="header" height="43" depth="1">
+				<headerbg />
+				<label depth="3" pos="16,-6" width="688" height="32" font_size="32" justify="center" color="{outcomecolor}" text="{outcome}"/>
+			</rect>
+			<rect name="content" pos="3,-49">
+				<sprite depth="0" name="bg" color="0,0,0,210" type="sliced" sprite="menu_empty" width="714" height="520"/>
+				<label depth="3" pos="16,-8" width="682" height="150" font_size="20" justify="left" upper_case="false" color="255,255,255,235" text="{lead}"/>
+				<label depth="3" pos="16,-162" width="682" height="150" font_size="18" justify="left" upper_case="false" color="220,220,220,235" text="{team}"/>
+				<label depth="3" pos="16,-318" width="682" height="140" font_size="16" justify="left" upper_case="false" color="200,200,200,235" text="{players}"/>
+				<rect name="btnClose" depth="4" pos="250,-470" width="220" height="40" controller="SimpleButton">
+					<button depth="1" name="clickable" sprite="menu_empty" defaultcolor="80,80,80,220" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" sound="[paging_click]"/>
+					<label depth="3" name="btnLabel" pos="0,-4" width="220" height="32" font_size="24" justify="center" color="255,255,255,255" text="CLOSE" text_key="hsTpClose"/>
+				</rect>
+			</rect>
+		</window>
+	</append>
+</configs>
