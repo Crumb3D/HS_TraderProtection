@@ -303,6 +303,46 @@ public static class HSTraderMission
         return IsInMissionRadius(entity.position);
     }
 
+    // Vanilla compound protect (no-build / no-damage) is off for this trader while the mission runs.
+    // The NPC is still god until the raid. Other traders stay protected.
+    public static bool ShouldDisableTraderProtect(World world, Vector3i pos)
+    {
+        var area = MissionProtectArea(world);
+        if (area == null)
+            return false;
+        return area.IsWithinProtectArea(pos.ToVector3());
+    }
+
+    public static bool ShouldDisableTraderProtect(World world, Vector3i min, Vector3i max)
+    {
+        var area = MissionProtectArea(world);
+        if (area == null)
+            return false;
+        var b = area.AreaBounds;
+        return min.x <= b.xMax && max.x >= b.xMin
+            && min.y <= b.yMax && max.y >= b.yMin
+            && min.z <= b.zMax && max.z >= b.zMin;
+    }
+
+    public static bool ShouldDisableTraderProtect(World world, Bounds bounds)
+    {
+        if (world == null)
+            return false;
+        bounds.Expand(4f);
+        return ShouldDisableTraderProtect(world, World.worldToBlockPos(bounds.min), World.worldToBlockPos(bounds.max));
+    }
+
+    static TraderArea MissionProtectArea(World world)
+    {
+        if (!HSTraderSnapshot.IsLockdown || HSTraderSnapshot.TraderEntityId <= 0)
+            return null;
+        if (world == null)
+            world = GameManager.Instance != null ? GameManager.Instance.World : null;
+        if (world == null)
+            return null;
+        return world.GetTraderAreaAt(new Vector3i(HSTraderSnapshot.TraderX, HSTraderSnapshot.TraderY, HSTraderSnapshot.TraderZ));
+    }
+
     public static bool IsInMissionRadius(Vector3 pos)
     {
         if (!HSTraderSnapshot.IsActive)

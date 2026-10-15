@@ -43,7 +43,7 @@ Do not use the debug commands on a live player world unless you mean it.
 
 - Prep HUD countdown (**RAID IN N DAYS**).
 - Looking at the trader: trading is closed.
-- Building **outside** the vanilla protect volume.
+- Building **inside** the compound (protect volume is off). Wall the trader in steel if you want. He still cannot take damage until the raid.
 - Raid: zombies walking into the trader, not only the players.
 - Health bar, then the pulse after 75% of the 24-hour fight.
 - Results: SUCCESS / FAILURE, team buckets, per-player K / Dmg / HS / ammo.

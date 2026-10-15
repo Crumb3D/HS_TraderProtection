@@ -54,9 +54,9 @@ foreach ($g in @("HS_TP_Normal", "HS_TP_Feral", "HS_TP_Radiated", "HS_TP_Charged
 if (-not (Test-Path (Join-Path $Root "Handbook.html"))) { Fail "Handbook.html missing" } else { Ok "player handbook html" }
 if (-not (Test-Path (Join-Path $Root "PLAYER_HANDBOOK.md"))) { Fail "PLAYER_HANDBOOK.md missing" } else { Ok "player handbook md" }
 $hb = Get-Content (Join-Path $Root "Handbook.html") -Raw
-if ($hb -notmatch 'Defend the trader' -or $hb -notmatch 'RAID IN N DAYS') { Fail "handbook html is missing the trader-defence guide" } else { Ok "handbook html trader-defence" }
+if ($hb -notmatch 'Defend the trader' -or $hb -notmatch 'RAID IN N DAYS' -or $hb -notmatch 'wall the trader in with steel') { Fail "handbook html is missing the trader-defence guide" } else { Ok "handbook html trader-defence" }
 $md = Get-Content (Join-Path $Root "PLAYER_HANDBOOK.md") -Raw
-if ($md -notmatch 'Defend the trader' -or $md -notmatch 'RAID IN N DAYS') { Fail "handbook md is missing the trader-defence guide" } else { Ok "handbook md trader-defence" }
+if ($md -notmatch 'Defend the trader' -or $md -notmatch 'RAID IN N DAYS' -or $md -notmatch 'wall the trader in with steel') { Fail "handbook md is missing the trader-defence guide" } else { Ok "handbook md trader-defence" }
 foreach ($doc in @("CHANGELOG.md", "QUICKSTART.md", "GAME_API_CALLS.md", "README.md")) {
     if (-not (Test-Path (Join-Path $Root $doc))) { Fail "$doc missing" } else { Ok $doc }
 }

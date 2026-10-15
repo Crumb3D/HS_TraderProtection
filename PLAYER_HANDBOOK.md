@@ -16,7 +16,7 @@ Someone with admin rights stands **inside a trader compound** and types `hs_tp s
 
 You do not start this yourself. You wait for the HUD on the left of the toolbelt.
 
-The shop NPC stays. The vanilla trader protect volume still stops you wrecking the shop. Build **outside** that volume.
+The shop NPC stays. The **vanilla protect volume is off** for this compound until the mission ends: you can smash shop blocks and **wall the trader in with steel** if you want. The trader still cannot take damage until the raid starts. Other traders stay protected.
 
 ---
 
@@ -29,7 +29,7 @@ Default: **7 in-game days**.
 - Trading is closed. Looking at the trader says they are busy with the protection mission.
 - You are not kicked out of the compound (teleport-out is off while the mission runs).
 
-Use the time. Walls, turrets, traps, ammo, meds. Put defences **around** the compound, not through the shop prefab — the shop reloads at the end and player walls **inside** the vanilla prefab do not survive that.
+Use the time. Walls, turrets, traps, ammo, meds. Box the doorway, wrap the trader in steel, whatever you like. The shop prefab reloads when the mission ends, so anything you built **inside** the vanilla shop is wiped. Steel you put **around** the compound stays until you tear it down (or the raid does).
 
 `hs_tp status` on the server also prints the same countdown.
 
@@ -100,7 +100,7 @@ There is no per-zombie kill feed. One kill, one bucket.
 
 - Trade until the mission is idle again.
 - Hurt the trader yourself (or with your turrets).
-- Keep player-built walls **inside** the vanilla shop prefab after the reload.
+- Keep player-built walls **inside** the vanilla shop prefab after the reload — that part of the compound is restored.
 - Start a second mission while one is running, or while the results screen is still up.
 
 ---

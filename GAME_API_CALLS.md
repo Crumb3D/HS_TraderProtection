@@ -17,6 +17,7 @@ Not extracted from the game DLL. This is `HS_TraderProtection/Source`. Unity / S
 - `ItemActionRanged`
 - `NetPackageManager`
 - `ReflectionHelpers`
+- `World` (`IsWithinTraderArea`, `IsWithinTraderPlacingProtection`)
 
 ## Manual Harmony (not PatchAll)
 - `EntityTrader.CanLockOnServer` (3.2)
@@ -29,10 +30,10 @@ Not extracted from the game DLL. This is `HS_TraderProtection/Source`. Unity / S
 - `ConnectionManager.Instance.IsServer` / `SendPackage` / `SendToClientsOrServer`
 - `ClientInfo.SendPackage` / `entityId`
 - `NetPackageManager` `knownPackageTypes` / `packageClassToPackageId` / `packageIdToClass` / `GetPackage` / `SetupBaseMapping` / `StartServer` / `StartClient`
-- `World.worldTime` / `GetEntity` / `GetPlayers` / `GetLocalPlayers` / `GetPrimaryPlayer` / `GetTraderAreaAt` / `SpawnEntityInWorld` / `RemoveEntity` / `ResetPOIS`
+- `World.worldTime` / `GetEntity` / `GetPlayers` / `GetLocalPlayers` / `GetPrimaryPlayer` / `GetTraderAreaAt` / `IsWithinTraderArea` / `IsWithinTraderPlacingProtection` / `SpawnEntityInWorld` / `RemoveEntity` / `ResetPOIS`
 - `World.worldToBlockPos`
 - `PrefabInstance.ResetBlocksAndRebuild` / `id` / bounding box
-- `TraderArea.GetTrader`
+- `TraderArea.GetTrader` / `IsWithinProtectArea` / `AreaBounds`
 - `EntityTrader.NPCInfo.TraderID` / `IsGodMode` / `Health` / `GetMaxHealth` / `DamageEntity` / `Kill` / `CanDamageEntity`
 - `EntityFactory.CreateEntity`
 - `EntityClass.list` / entity group spawn names

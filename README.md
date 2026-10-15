@@ -45,6 +45,6 @@ hs_tp debug kill         fake a lethal hit (testing)
 4. On success or death the compound is rebuilt, the trader is restored, and the results screen opens.
 5. Close the results screen. The mod sits idle until an admin starts again.
 
-Build defences **outside** the vanilla trader protect volume. The shop itself cannot be damaged or built in.
+While the mission runs, the **vanilla protect volume is off** at that compound: you can build and break inside, including boxing the trader in steel. The trader NPC still cannot be hurt until the raid starts. The shop prefab reloads when the mission ends.
 
 See `CHANGELOG.md` for what changed in each version.

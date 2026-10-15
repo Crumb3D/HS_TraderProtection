@@ -126,6 +126,54 @@ public static class HSTraderNoTeleport
     }
 }
 
+[HarmonyPatch(typeof(World), "IsWithinTraderPlacingProtection", new[] { typeof(Vector3i) })]
+public static class HSTraderPlaceProtectPos
+{
+    static bool Prefix(World __instance, Vector3i _worldBlockPos, ref bool __result)
+    {
+        if (!HSTraderMission.ShouldDisableTraderProtect(__instance, _worldBlockPos))
+            return true;
+        __result = false;
+        return false;
+    }
+}
+
+[HarmonyPatch(typeof(World), "IsWithinTraderPlacingProtection", new[] { typeof(Bounds) })]
+public static class HSTraderPlaceProtectBounds
+{
+    static bool Prefix(World __instance, Bounds _bounds, ref bool __result)
+    {
+        if (!HSTraderMission.ShouldDisableTraderProtect(__instance, _bounds))
+            return true;
+        __result = false;
+        return false;
+    }
+}
+
+[HarmonyPatch(typeof(World), "IsWithinTraderArea", new[] { typeof(Vector3i) })]
+public static class HSTraderAreaPos
+{
+    static bool Prefix(World __instance, Vector3i _worldBlockPos, ref bool __result)
+    {
+        if (!HSTraderMission.ShouldDisableTraderProtect(__instance, _worldBlockPos))
+            return true;
+        __result = false;
+        return false;
+    }
+}
+
+[HarmonyPatch(typeof(World), "IsWithinTraderArea", new[] { typeof(Vector3i), typeof(Vector3i) })]
+public static class HSTraderAreaBox
+{
+    static bool Prefix(World __instance, Vector3i _minPos, Vector3i _maxPos, ref bool __result)
+    {
+        if (!HSTraderMission.ShouldDisableTraderProtect(__instance, _minPos, _maxPos))
+            return true;
+        __result = false;
+        return false;
+    }
+}
+
 [HarmonyPatch(typeof(EAIApproachAndAttackTarget), "CanExecute")]
 public static class HSTraderAiAttack
 {
