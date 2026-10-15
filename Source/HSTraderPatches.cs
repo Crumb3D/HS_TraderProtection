@@ -174,6 +174,30 @@ public static class HSTraderAreaBox
     }
 }
 
+[HarmonyPatch(typeof(World), "CanPlaceBlockAt", new[] { typeof(Vector3i), typeof(PersistentPlayerData), typeof(bool) })]
+public static class HSTraderWorldCanPlace
+{
+    static bool Prefix(World __instance, Vector3i blockPos, PersistentPlayerData lpRelative, bool traderAllowed, ref bool __result)
+    {
+        if (traderAllowed || !HSTraderMission.ShouldDisableTraderProtect(__instance, blockPos))
+            return true;
+        __result = __instance.CanPlaceBlockAt(blockPos, lpRelative, true);
+        return false;
+    }
+}
+
+[HarmonyPatch(typeof(World), "CanPickupBlockAt")]
+public static class HSTraderWorldCanPickup
+{
+    static bool Prefix(World __instance, Vector3i blockPos, PersistentPlayerData lpRelative, ref bool __result)
+    {
+        if (!HSTraderMission.ShouldDisableTraderProtect(__instance, blockPos))
+            return true;
+        __result = __instance.CanPlaceBlockAt(blockPos, lpRelative, true);
+        return false;
+    }
+}
+
 [HarmonyPatch(typeof(EAIApproachAndAttackTarget), "CanExecute")]
 public static class HSTraderAiAttack
 {

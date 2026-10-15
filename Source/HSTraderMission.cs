@@ -303,33 +303,56 @@ public static class HSTraderMission
         return IsInMissionRadius(entity.position);
     }
 
-    // Vanilla compound protect (no-build / no-damage) is off for this trader while the mission runs.
-    // The NPC is still god until the raid. Other traders stay protected.
+    // Vanilla compound protect (no-build / no-damage / keystone ping) is off for this trader
+    // while the mission runs. Match the game's 2D placing-protection test (padding 2, ignore Y)
+    // so the whole shop and courtyard can be walled in steel. The NPC is still god until the raid.
     public static bool ShouldDisableTraderProtect(World world, Vector3i pos)
     {
-        var area = MissionProtectArea(world);
-        if (area == null)
+        if (!HSTraderSnapshot.IsLockdown)
             return false;
-        return area.IsWithinProtectArea(pos.ToVector3());
+        var area = MissionProtectArea(world);
+        var deco = GameManager.Instance != null ? GameManager.Instance.GetDynamicPrefabDecorator() : null;
+        if (deco != null)
+        {
+            var at = deco.GetTraderAtPosition(pos, World.cTraderPlacingProtection);
+            if (area != null)
+                return at == area;
+            if (at != null)
+                return IsInMissionRadius(pos.ToVector3());
+        }
+        if (area != null && InProtectXz(area, pos.x, pos.z, World.cTraderPlacingProtection))
+            return true;
+        return IsInMissionRadius(pos.ToVector3());
     }
 
     public static bool ShouldDisableTraderProtect(World world, Vector3i min, Vector3i max)
     {
-        var area = MissionProtectArea(world);
-        if (area == null)
+        if (!HSTraderSnapshot.IsLockdown)
             return false;
-        var b = area.AreaBounds;
-        return min.x <= b.xMax && max.x >= b.xMin
-            && min.y <= b.yMax && max.y >= b.yMin
-            && min.z <= b.zMax && max.z >= b.zMin;
+        var area = MissionProtectArea(world);
+        if (area != null)
+            return OverlapsProtectXz(area, min, max, World.cTraderPlacingProtection);
+        return IsInMissionRadius(min.ToVector3()) || IsInMissionRadius(max.ToVector3());
     }
 
     public static bool ShouldDisableTraderProtect(World world, Bounds bounds)
     {
-        if (world == null)
+        if (!HSTraderSnapshot.IsLockdown)
             return false;
         bounds.Expand(4f);
         return ShouldDisableTraderProtect(world, World.worldToBlockPos(bounds.min), World.worldToBlockPos(bounds.max));
+    }
+
+    static bool InProtectXz(TraderArea area, int x, int z, int pad)
+    {
+        var b = area.AreaBounds;
+        return x <= b.xMax + pad && x >= b.xMin - pad && z <= b.zMax + pad && z >= b.zMin - pad;
+    }
+
+    static bool OverlapsProtectXz(TraderArea area, Vector3i min, Vector3i max, int pad)
+    {
+        var b = area.AreaBounds;
+        return max.x >= b.xMin - pad && min.x <= b.xMax + pad && max.z >= b.zMin - pad && min.z <= b.zMax + pad;
     }
 
     static TraderArea MissionProtectArea(World world)

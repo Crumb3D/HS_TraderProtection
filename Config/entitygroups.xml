@@ -42,10 +42,10 @@
 			<e n="zombieSteveCharged" />
 			<e n="zombieNurseCharged" />
 			<e n="zombieBusinessManCharged" />
-			<e n="zombieFatCopCharged" />
-			<e n="zombieSoldierCharged" />
+			<e n="zombieBoeCharged" />
 			<e n="zombieWightCharged" />
 			<e n="zombieDarleneCharged" />
+			<e n="zombieYoCharged" />
 		</entitygroup>
 		<entitygroup name="HS_TP_Infernal">
 			<e n="zombieBusinessManInfernal" />

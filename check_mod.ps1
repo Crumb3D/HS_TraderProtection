@@ -50,6 +50,22 @@ $grpText = Get-Content $groups -Raw
 foreach ($g in @("HS_TP_Normal", "HS_TP_Feral", "HS_TP_Radiated", "HS_TP_Charged", "HS_TP_Infernal", "HS_TP_Demolisher")) {
     if ($grpText -notmatch [regex]::Escape($g)) { Fail "entitygroups missing $g" } else { Ok "group $g" }
 }
+$entNames = [regex]::Matches($grpText, '<e n="([^"]+)"') | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique
+$entityXml = @(
+    "C:\7DTD-Server\ServerFiles\Data\Config\entityclasses.xml",
+    "C:\7DTD-Server-3.3\ServerFiles\Data\Config\entityclasses.xml"
+)
+foreach ($ecPath in $entityXml) {
+    if (-not (Test-Path $ecPath)) { Write-Host "skip  entityclasses $($ecPath)"; continue }
+    $live = New-Object 'System.Collections.Generic.HashSet[string]'
+    foreach ($line in Get-Content $ecPath) {
+        if ($line -match '<!--') { continue }
+        if ($line -match '<entity_class name="([^"]+)"') { [void]$live.Add($Matches[1]) }
+    }
+    foreach ($n in $entNames) {
+        if (-not $live.Contains($n)) { Fail "entity '$n' missing in $ecPath" } else { Ok "entity $n" }
+    }
+}
 
 if (-not (Test-Path (Join-Path $Root "Handbook.html"))) { Fail "Handbook.html missing" } else { Ok "player handbook html" }
 if (-not (Test-Path (Join-Path $Root "PLAYER_HANDBOOK.md"))) { Fail "PLAYER_HANDBOOK.md missing" } else { Ok "player handbook md" }
