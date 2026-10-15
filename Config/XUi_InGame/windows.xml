@@ -1,6 +1,6 @@
 <configs>
 	<append xpath="/windows">
-		<window name="HUDHSTrader" pos="20,-160" width="340" height="210" anchor="Left" depth="15" controller="HSTraderHud, HS_TraderProtection">
+		<window name="HUDHSTrader" pos="12,-12" width="340" height="210" anchor="TopLeft" depth="15" controller="HSTraderHud, HS_TraderProtection">
 			<rect width="340" height="210" visible="{show}">
 				<sprite depth="1" pos="0,0" width="340" height="210" sprite="menu_empty" color="0,0,0,170" type="sliced"/>
 				<label depth="2" pos="12,-8" width="316" height="28" font_size="22" justify="center" color="255,210,80,255" text="{title}"/>

@@ -21,7 +21,7 @@ hs_tp stop
 hs_tp resetstats
 ```
 
-Stand **inside a trader compound**, then `hs_tp start`. The HUD on the left of the toolbelt says **PROTECTED** and **RAID IN N DAYS hh:mm**.
+Stand **inside a trader compound**, then `hs_tp start`. The HUD in the **top left** says **PROTECTED** and **RAID IN N DAYS hh:mm**.
 
 Optional: `hs_tp start 12345` with a trader entity id if you are not standing in the area.
 

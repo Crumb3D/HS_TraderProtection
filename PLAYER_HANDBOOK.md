@@ -14,7 +14,7 @@ Works on 7 Days To Die **3.2 and 3.3**. Load this mod on the dedicated server an
 
 Someone with admin rights stands **inside a trader compound** and types `hs_tp start` in the F1 console.
 
-You do not start this yourself. You wait for the HUD on the left of the toolbelt.
+You do not start this yourself. You wait for the HUD in the **top left**.
 
 The shop NPC stays. The **vanilla protect volume is off** for this compound until the mission ends: you can smash shop blocks and **wall the trader in with steel** if you want. The trader still cannot take damage until the raid starts. Other traders stay protected.
 
@@ -24,7 +24,7 @@ The shop NPC stays. The **vanilla protect volume is off** for this compound unti
 
 Default: **7 in-game days**.
 
-- The left HUD says **PROTECTED** and counts down **RAID IN N DAYS hh:mm**.
+- The top-left HUD says **PROTECTED** and counts down **RAID IN N DAYS hh:mm**.
 - The trader cannot take damage.
 - Trading is closed. Looking at the trader says they are busy with the protection mission.
 - You are not kicked out of the compound (teleport-out is off while the mission runs).
@@ -109,5 +109,5 @@ There is no per-zombie kill feed. One kill, one bucket.
 
 - Nail the outer ring first. Demolishers show up late.
 - Turrets and traps count on the results screen. Use them.
-- The left HUD stays up for the whole mission. If you do not see it, this folder is missing from **your** Mods as well as the server.
+- The top-left HUD stays up for the whole mission. If you do not see it, this folder is missing from **your** Mods as well as the server.
 - After an update, restart the **matching dedicated server and the matching client**.

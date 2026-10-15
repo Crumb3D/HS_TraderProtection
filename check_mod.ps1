@@ -42,6 +42,7 @@ foreach ($f in @($windows, $xui, $groups)) {
 
 $winText = Get-Content $windows -Raw
 if ($winText -notmatch 'HSTraderHud, HS_TraderProtection') { Fail "HUD controller must be 'HSTraderHud, HS_TraderProtection'" } else { Ok "HUD controller" }
+if ($winText -notmatch 'anchor="TopLeft"') { Fail "HUD must be TopLeft" } else { Ok "HUD TopLeft" }
 $xuiText = Get-Content $xui -Raw
 if ($xuiText -notmatch 'HUDHSTrader') { Fail "xui.xml must append HUDHSTrader to toolbelt" } else { Ok "toolbelt HUD" }
 if ($xuiText -notmatch 'hsTraderResults') { Fail "xui.xml missing hsTraderResults group" } else { Ok "results group" }

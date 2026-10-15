@@ -1,6 +1,6 @@
 # HS Trader Protection
 
-**Player guide:** `PLAYER_HANDBOOK.md` in this folder, or open `Handbook.html` to print. Defend the trader: prep, raid waves, left HUD, results screen.
+**Player guide:** `PLAYER_HANDBOOK.md` in this folder, or open `Handbook.html` to print. Defend the trader: prep, raid waves, top-left HUD, results screen.
 
 An admin starts a mission at a trader compound. Players prepare, then defend the trader through escalating zombie waves. The trader must survive **24 in-game hours** after the raid begins. Works on 7 Days To Die **3.2 and 3.3**. Same DLL on the client and the dedicated server.
 
