@@ -4,6 +4,6 @@
   <DisplayName value="HS Trader Protection" />
   <Description value="Admin-started trader defence mission. Prep, raid waves, HUD, results. Admin: hs_tp" />
   <Author value="Crumb" />
-  <Version value="0.1.1" />
+  <Version value="0.1.2" />
   <SkipWithAntiCheat value="true" />
 </xml>

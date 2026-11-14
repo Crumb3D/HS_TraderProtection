@@ -2,6 +2,10 @@
 
 Works on 7 Days To Die **3.2, 3.3 and 3.4** with the same download. Install on the dedicated server and on every client, and keep them on the same version.
 
+## 0.1.2
+
+- **No warning on startup.** Looking up the trader lock no longer asks Harmony for the method the running game does not have. 3.2 still uses `CanLockOnServer`. 3.3 and 3.4 still use `OnLockRequestServer`.
+
 ## 0.1.1
 
 - **Runs on 7DTD 3.4.** Same download still runs on 3.2 and 3.3. It used to refuse to load on 3.4. 3.4 uses the 3.3 network and trader-lock path.
