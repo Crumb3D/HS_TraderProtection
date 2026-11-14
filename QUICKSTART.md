@@ -6,7 +6,7 @@ On a **dedicated server**, the same folder must be in the **server Mods** and in
 
 Restart the matching dedicated server and the matching client after install.
 
-Works on 7 Days To Die **3.2 and 3.3**. Same DLL.
+Works on 7 Days To Die **3.2, 3.3 and 3.4**. Same DLL.
 
 ---
 

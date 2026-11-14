@@ -2,7 +2,7 @@
 
 Not extracted from the game DLL. This is `HS_TraderProtection/Source`. Unity / System / Harmony / our types skipped.
 
-3.2 vs 3.3: `Constants.cVersionInformation` Minor 20 = 3.2, Minor 30 = 3.3. Same DLL. Net packages use compiled `GetLength` on 3.2 and an emitted subclass on 3.3. Trade lock is `EntityTrader.CanLockOnServer` (3.2) vs `OnLockRequestServer` (3.3). Ammo tracking reads `ItemInventoryData.holdingEntity` as a field (3.2) or property (3.3).
+3.2 vs 3.3: `Constants.cVersionInformation` Minor 20 = 3.2, Minor 30 = 3.3, Minor 40 = 3.4 (same calls as 3.3). Same DLL. Net packages use compiled `GetLength` on 3.2 and an emitted subclass on 3.3. Trade lock is `EntityTrader.CanLockOnServer` (3.2) vs `OnLockRequestServer` (3.3). Ammo tracking reads `ItemInventoryData.holdingEntity` as a field (3.2) or property (3.3).
 
 ## Inherits
 - `ConsoleCmdAbstract`
